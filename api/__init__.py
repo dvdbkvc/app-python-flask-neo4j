@@ -58,6 +58,12 @@ def create_app(test_config=None):
     # JWT
     jwt = JWTManager(app)
 
+    # Added to resolve "RuntimeError: You must provide a `@jwt.user_lookup_loader` callback to use this method"
+    @jwt.user_lookup_loader
+    def user_lookup_callback(_jwt_header, jwt_data):
+        return jwt_data
+    
+
     CORS(app, 
         resources={r"/*": {"origins": ["http://localhost:3000", "http://127.0.0.1:3000"]}}
     )

@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+source .env.example
+
+echo FLASK_APP = $FLASK_APP
+echo FLASK_DEBUG = $FLASK_DEBUG
+echo NEO4J_URI = $NEO4J_URI
+echo NEO4J_DATABASE = $NEO4J_DATABASE
+
+flask run

@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Python Debugger: Flask",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "api/__init__.py",
+                "FLASK_DEBUG": "1",
+                "FLASK_RUN_PORT": "3000",
+                "NEO4J_URI": "neo4j://3.236.182.213:7687",
+                "NEO4J_USERNAME": "neo4j",
+                "NEO4J_PASSWORD": "plexiglass-box-cheaters",
+                "NEO4J_DATABASE": "neo4j",
+                "JWT_SECRET": "secret",
+                "SALT_ROUNDS": "10"
+            },
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ],
+            "jinja": true
+        }
+    ]
+}
